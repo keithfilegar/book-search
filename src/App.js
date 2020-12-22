@@ -3,7 +3,6 @@ import './App.css';
 import Search from './search/search'
 import Filters from './filters/filters'
 import List from './list/list'
-import BookTypeFilter from './bookTypeFilter/bookTypeFilter';
 
 class App extends Component {
   constructor(props) {
@@ -86,7 +85,9 @@ class App extends Component {
 
     return (
       <div className="App">
-        <h1>Google Book Search</h1>
+        <header className="appHeader">
+          <h1>Google Book Search</h1>
+        </header>
         <Search 
         state={this.state}
         setSearchTerm={searchTerm => this.setSearchTerm(searchTerm)}

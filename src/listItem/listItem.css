@@ -1,0 +1,15 @@
+img {
+    height: 250px;
+    width: 165px;
+}
+
+.bookTitle {
+    margin: 10px 100px;
+    text-align: center
+}
+
+.bookDetailsContainer {
+    justify-content: center;
+    margin-right: 20px;
+    text-align: left;
+}

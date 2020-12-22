@@ -15,8 +15,8 @@ class ListItemDetails extends React.Component {
     render() {
         return (
             <div>
-                <p>{this.props.book.description}</p>
                 {this.showPrice(this.props.saleInfo)}
+                <p>{this.props.book.description}</p>
             </div>
         )
     }

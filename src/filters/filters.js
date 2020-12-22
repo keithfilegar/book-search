@@ -6,7 +6,7 @@ import BookTypeFilter from '../bookTypeFilter/bookTypeFilter'
 class Filters extends React.Component {
     render() {
         return (
-            <div>
+            <div className="filterContainer">
                 <PrintTypeFilter 
                 setPrintTypeFilter={this.props.setPrintTypeFilter}/>
                 <BookTypeFilter 

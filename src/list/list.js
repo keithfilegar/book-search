@@ -8,7 +8,6 @@ class List extends React.Component {
             .props
             .items
             .map((book, i) => <ListItem {...book} key={i}/>);
-        //   this.state.results.filter(item => this.state.results.volumeInfo === printType)
         return (
             <div className="bookList">
                 {books}

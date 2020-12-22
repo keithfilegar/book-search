@@ -17,7 +17,6 @@ class ListItem extends React.Component {
 
 
     render() {
-        //console.log(this.props.saleInfo.retailPrice.amount)
         const book = this.props.volumeInfo
         const alt = "cover image for " + book.title
 
@@ -29,18 +28,20 @@ class ListItem extends React.Component {
             ? <ListItemDetails 
             book={book}
             saleInfo={this.props.saleInfo}/>
-            : <form onSubmit={e => this.showDetails(true)}>
+            : <form onSubmit={e => this.showDetails(true)} className="moreDetails">
                 <button type="submit">More Details</button>
                 </form>;
         return (
-            <div className={`"listItem group "${book.printType}`}>
+            <div className="listItem">
                 <h2 className="bookTitle">{book.title}</h2>
-                <div className="bookImageContainer item">
-                    <img className="bookImage" src={book.imageLinks.thumbnail} alt={alt}/>
-                </div>
-                <div className="bookDetailsContainer item">
-                    {author}
-                    {details}
+                <div className="group">
+                    <div className="bookImageContainer item">
+                        <img className="bookImage" src={book.imageLinks.thumbnail} alt={alt}/>
+                    </div>
+                    <div className="bookDetailsContainer item">
+                        {author}
+                        {details}
+                    </div>
                 </div>
             </div>
         )
