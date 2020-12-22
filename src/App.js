@@ -9,7 +9,6 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      showFilter: false,
       showList: false,
       searchTerm: "",
       results: [],
@@ -55,7 +54,6 @@ class App extends Component {
       this.setState({
         results: data.items
       });
-      this.showFilter(true)
       this.showList(true)
     })
     .catch(err => {
@@ -82,11 +80,6 @@ class App extends Component {
     const error = this.state.error
       ? <div className="error">{this.state.error}</div>
       : "";
-    const filter = this.state.showFilter
-      ? <Filters
-      setPrintTypeFilter={printType => this.setPrintTypeFilter(printType)}
-      setBookTypeFilter={bookType => this.setBookTypeFilter(bookType)}/>
-      : "";
     const list = this.state.showList
       ? <List items={this.state.results}/>
       :"";
@@ -101,7 +94,9 @@ class App extends Component {
         showList={show => this.showList(show)}
         handleSearch={e => this.handleSearch(e)}/>
         {error}
-        {filter}
+        <Filters
+        setPrintTypeFilter={printType => this.setPrintTypeFilter(printType)}
+        setBookTypeFilter={bookType => this.setBookTypeFilter(bookType)}/>
         {list}
       </div>
     )
