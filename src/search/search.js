@@ -14,6 +14,7 @@ class Search extends React.Component {
                 placeholder="Search an author or title"
                 value={this.props.state.searchTerm}
                 onChange={e => this.props.setSearchTerm(e.target.value)}/>
+                <button type="submit">Search</button>
             </form>
         )
     }
